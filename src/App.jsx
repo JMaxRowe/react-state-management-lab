@@ -118,8 +118,13 @@ const App = () => {
   }
 
   const handleAddFighter = (fighter) =>{
-    setTeam([...team, fighter])
-    setZombieFighters(prev => prev.filter(f => f.id !== fighter.id))
+    if (money-fighter.price >= 0){
+      setTeam([...team, fighter])
+      setZombieFighters(prev => prev.filter(f => f.id !== fighter.id))
+      setMoney(money-fighter.price)
+    }else{console.log("Not enough money")}
+    
+    
   }
 
 
