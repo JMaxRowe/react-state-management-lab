@@ -91,7 +91,14 @@ const App = () => {
 const FighterCard = (props) =>{
   return(
     <>
-    <li className="fighter-card">{props.name}</li>
+    <li className="fighter-card">
+      <img src={props.img} alt={props.name} />
+      <div className="fighter-name">{props.name}</div>
+      <div className="fighter-price">£{props.price}</div>
+      <div className="fighter-strength">Strength: {props.strength}</div>
+      <div className="fighter-agility">Agility: {props.agility}</div>
+      <button>+Add</button>
+    </li>
     </>
   )
 }
@@ -99,6 +106,8 @@ const FighterCard = (props) =>{
   return (
     <>
       <h1>Zombie fighters</h1>
+      <h2>Money: £{money}</h2>
+      <h2>Fighters:</h2>
       <ul>
         {zombieFighters.map((fighter, index) =>(
           <FighterCard key={index} {...fighter}/>
