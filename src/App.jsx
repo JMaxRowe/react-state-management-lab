@@ -130,9 +130,10 @@ const App = () => {
   }
 
   const handleRemoveFighter = (fighter) =>{
-    
-    setZombieFighters([...team, fighter])
     setTeam(prev => prev.filter(f => f.id !== fighter.id))
+
+    setZombieFighters([...zombieFighters, fighter])
+
     setMoney(money+fighter.price)
     
   }
