@@ -103,6 +103,9 @@ const App = () => {
     )
   }
 
+  const totalStrength = team.reduce((sum, {strength}) => sum + strength, 0)
+  const totalAgility = team.reduce((sum, {agility}) => sum + agility, 0)
+
   const TeammateCard = (props) =>{
     return(
       <>
@@ -132,6 +135,8 @@ const App = () => {
     <>
       <h1>Zombie fighters</h1>
       <h2>Money: £{money}</h2>
+      <h2>Team Strength: {totalStrength}</h2>
+      <h2>Team Agility: {totalAgility}</h2>
       <h2>Team:</h2>
       <ul>
         {team.length <= 0 
