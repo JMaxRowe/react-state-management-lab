@@ -115,6 +115,7 @@ const App = () => {
         <div className="fighter-price">£{props.price}</div>
         <div className="fighter-strength">Strength: {props.strength}</div>
         <div className="fighter-agility">Agility: {props.agility}</div>
+        <button onClick={() => handleRemoveFighter(props)}>-Remove</button>
       </li>
       </>
     )
@@ -126,7 +127,13 @@ const App = () => {
       setZombieFighters(prev => prev.filter(f => f.id !== fighter.id))
       setMoney(money-fighter.price)
     }else{console.log("Not enough money")}
+  }
+
+  const handleRemoveFighter = (fighter) =>{
     
+    setZombieFighters([...team, fighter])
+    setTeam(prev => prev.filter(f => f.id !== fighter.id))
+    setMoney(money+fighter.price)
     
   }
 
